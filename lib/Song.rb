@@ -36,13 +36,13 @@ class Song
     new_genre.add_song(self)
   end
 
-  def self.find_by_name(name)
-    @@all.find{|song| song.name == name}
-  end
+  #def self.find_by_name(name)
+  #  @@all.find{|song| song.name == name}
+  #end
 
-  def self.find_or_create_by_name(name)
-    found_song = self.find_by_name(name)
-    return found_song if found_song != nil
-    self.create(name)
-  end
+  #def self.find_or_create_by_name(name)
+  #  found_song = self.find_by_name(name)
+  #  return found_song if found_song != nil
+  #  self.create(name)
+  #end
 end
