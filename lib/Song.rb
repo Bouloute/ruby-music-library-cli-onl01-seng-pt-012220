@@ -23,8 +23,8 @@ class Song
     @@all.push(self)
   end
 
-  def self.create(name)
-    self.new(name)
+  def self.create(name, artist = nil, genre = nil)
+    self.new(name, artist, genre)
   end
 
   def artist=(new_artist)
