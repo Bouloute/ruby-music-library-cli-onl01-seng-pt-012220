@@ -39,6 +39,8 @@ class Song
 
   def self.new_from_filename(filename)
     data = filename.chomp(".mp3").split(" - ")
-    self.create(data[0], data[1], data[2])
+    artist = Artist.find_or_create_by_name(data[1])
+    genre = Genre.find_or_create_by_name(data[2])
+    self.create(data[0], artist, genre)
   end
 end
