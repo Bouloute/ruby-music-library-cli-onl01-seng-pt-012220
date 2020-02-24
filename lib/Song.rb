@@ -23,8 +23,8 @@ class Song
     @@all.push(self)
   end
 
-  def self.create(name, artist = nil, genre = nil)
-    self.new(name, artist, genre)
+  def self.create(name)
+    self.new(name)
   end
 
   def artist=(new_artist)
@@ -41,7 +41,7 @@ class Song
     data = filename.chomp(".mp3").split(" - ")
     artist = Artist.find_or_create_by_name(data[0])
     genre = Genre.find_or_create_by_name(data[2])
-    self.create(data[1], artist, genre)
+    self.create_from_filename(data[1], artist, genre)
   end
 
   def self.create_from_filename(filename)
