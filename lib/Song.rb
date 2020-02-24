@@ -38,6 +38,7 @@ class Song
   end
 
   def self.new_from_filename(filename)
-    binding.pry
+    data = filename.remove(".mp3").split(" - ")
+    artist
   end
 end
